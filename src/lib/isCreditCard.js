@@ -12,8 +12,8 @@ const creditCard = /^(?:4[0-9]{12,15}(?:[0-9]{3,6})?|5[0-9]{15}|(222[1-9]|22[3-9
 
 
 export default function isCreditCard(str) {
-  assertString(str); //verify input is of type string
-  const sanitized = str.replace(/[- ]+/g, ''); //clear string of other symbols
+  assertString(str); /* verify input is of type string */
+  const sanitized = str.replace(/[- ]+/g, ''); /* clear string of other symbols */
   if (!creditCard.test(sanitized)) {
     return false;
   }
@@ -36,5 +36,6 @@ export default function isCreditCard(str) {
     }
     shouldDouble = !shouldDouble;
   }
-  return !!((sum % 10) === 0 ? sanitized : false); //cast to boolean and return
+  return !!((sum % 10) === 0 ? sanitized : false); /* cast to boolean and return */
 }
+
