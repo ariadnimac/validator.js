@@ -17,9 +17,9 @@ export default function isCreditCardImp(str){
     assertString(str); /* verify input is of type string */
     stripped = str.replace(/[- ]+/g, ''); /* clear string of other symbols */
     if (stripped.length > 19 | stripped.length < 10){
-        return false;
+        return false; /* decline numbers that don't have the appropriate length */
     }else{
-        if (!creditCard.test(stripped)) {
+        if (!creditCard.test(stripped)) { /*match number with regex expression */
             return false;
         }else{
             return true;
